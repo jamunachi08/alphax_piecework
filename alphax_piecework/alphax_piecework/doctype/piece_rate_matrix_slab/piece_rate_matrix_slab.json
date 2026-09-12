@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_qty",
+  "to_qty",
+  "rate_multiplier"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "From Qty (daily)",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "To Qty (0 = open)"
+  },
+  {
+   "default": "1",
+   "fieldname": "rate_multiplier",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Rate Multiplier",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "istable": 1,
+ "links": [],
+ "modified": "2026-09-11 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "Piece Rate Matrix Slab",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

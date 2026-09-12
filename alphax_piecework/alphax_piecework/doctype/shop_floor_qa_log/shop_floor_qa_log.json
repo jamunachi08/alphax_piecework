@@ -1,0 +1,444 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "piece_rate_log",
+  "inspection_date",
+  "company",
+  "inspector",
+  "quality_inspection",
+  "cb1",
+  "work_order",
+  "operation",
+  "item_code",
+  "worker_type",
+  "employee",
+  "employee_name",
+  "production_cell",
+  "sb_defect",
+  "qty_inspected",
+  "qty_failed",
+  "defect_code",
+  "responsibility",
+  "cb2",
+  "disposition",
+  "root_cause",
+  "evidence",
+  "sb_rework",
+  "rework_employee",
+  "rework_employee_name",
+  "original_payout_percent",
+  "cb3",
+  "third_party_deduction_percent",
+  "third_party_payout_percent",
+  "material_recovery_percent",
+  "defaults_applied",
+  "sb_impact",
+  "currency",
+  "unit_rate",
+  "material_unit_cost",
+  "cb4",
+  "original_deduction",
+  "material_recovery",
+  "rework_payout",
+  "total_worker_deduction",
+  "sb_payroll",
+  "payroll_status",
+  "wage_batch",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "QAL-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "QAL-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "piece_rate_log",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Piece Rate Log",
+   "options": "Piece Rate Log",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "inspection_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Inspection Date",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.company",
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "default": "__user",
+   "fieldname": "inspector",
+   "fieldtype": "Link",
+   "label": "Inspector",
+   "options": "User"
+  },
+  {
+   "fieldname": "quality_inspection",
+   "fieldtype": "Link",
+   "label": "Quality Inspection",
+   "options": "Quality Inspection"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "piece_rate_log.work_order",
+   "fieldname": "work_order",
+   "fieldtype": "Link",
+   "label": "Work Order",
+   "options": "Work Order",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.operation",
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Operation",
+   "options": "Operation",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.item_code",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "label": "Item",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.worker_type",
+   "fieldname": "worker_type",
+   "fieldtype": "Data",
+   "label": "Worker Type",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.employee",
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "piece_rate_log.production_cell",
+   "fieldname": "production_cell",
+   "fieldtype": "Link",
+   "label": "Production Cell",
+   "options": "Production Cell",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_defect",
+   "fieldtype": "Section Break",
+   "label": "Defect"
+  },
+  {
+   "fieldname": "qty_inspected",
+   "fieldtype": "Float",
+   "label": "Qty Inspected"
+  },
+  {
+   "fieldname": "qty_failed",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Qty Failed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "defect_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Defect Code",
+   "options": "PieceWork Defect Code",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "defect_code.responsibility",
+   "fetch_if_empty": 1,
+   "fieldname": "responsibility",
+   "fieldtype": "Select",
+   "label": "Responsibility",
+   "options": "\nWorker\nMachine\nMaterial Supplier\nEngineering"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Defaults from the Defect Code when left blank.",
+   "fieldname": "disposition",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Disposition",
+   "options": "\nScrap\nRework - Original Worker\nRework - Third Party",
+   "reqd": 0
+  },
+  {
+   "fieldname": "root_cause",
+   "fieldtype": "Small Text",
+   "label": "Root Cause"
+  },
+  {
+   "fieldname": "evidence",
+   "fieldtype": "Attach Image",
+   "label": "Evidence Photo"
+  },
+  {
+   "fieldname": "sb_rework",
+   "fieldtype": "Section Break",
+   "label": "Payout Rules"
+  },
+  {
+   "depends_on": "eval:doc.disposition=='Rework - Third Party'",
+   "fieldname": "rework_employee",
+   "fieldtype": "Link",
+   "label": "Rework Specialist",
+   "mandatory_depends_on": "eval:doc.disposition=='Rework - Third Party'",
+   "options": "Employee"
+  },
+  {
+   "depends_on": "eval:doc.disposition=='Rework - Third Party'",
+   "fetch_from": "rework_employee.employee_name",
+   "fieldname": "rework_employee_name",
+   "fieldtype": "Data",
+   "label": "Specialist Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.disposition!='Rework - Third Party'",
+   "description": "Scrap: share of failed-piece pay the worker keeps. Rework (original): pay earned for completing the rework.",
+   "fieldname": "original_payout_percent",
+   "fieldtype": "Percent",
+   "label": "Original Worker Payout %"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.disposition=='Rework - Third Party'",
+   "fieldname": "third_party_deduction_percent",
+   "fieldtype": "Percent",
+   "label": "Deduct From Original %"
+  },
+  {
+   "depends_on": "eval:doc.disposition=='Rework - Third Party'",
+   "fieldname": "third_party_payout_percent",
+   "fieldtype": "Percent",
+   "label": "Specialist Payout %"
+  },
+  {
+   "depends_on": "eval:doc.disposition=='Scrap'",
+   "fieldname": "material_recovery_percent",
+   "fieldtype": "Percent",
+   "label": "Material Cost Recovery %"
+  },
+  {
+   "fieldname": "defaults_applied",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Defaults Applied",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "sb_impact",
+   "fieldtype": "Section Break",
+   "label": "Financial Impact"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "unit_rate",
+   "fieldtype": "Currency",
+   "label": "Unit Rate",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "material_unit_cost",
+   "fieldtype": "Currency",
+   "label": "Material Unit Cost",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "original_deduction",
+   "fieldtype": "Currency",
+   "label": "Original Worker Deduction",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "material_recovery",
+   "fieldtype": "Currency",
+   "label": "Material Recovery",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rework_payout",
+   "fieldtype": "Currency",
+   "label": "Rework Payout",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_worker_deduction",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Total Worker Deduction",
+   "options": "currency",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_payroll",
+   "fieldtype": "Section Break",
+   "label": "Payroll"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "Unbatched",
+   "fieldname": "payroll_status",
+   "fieldtype": "Select",
+   "label": "Payroll Status",
+   "no_copy": 1,
+   "options": "Unbatched\nBatched\nPosted",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "wage_batch",
+   "fieldtype": "Link",
+   "label": "Wage Batch",
+   "no_copy": 1,
+   "options": "PieceWork Wage Batch",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Shop Floor QA Log",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-11 20:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "Shop Floor QA Log",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork QC Inspector",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Supervisor"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

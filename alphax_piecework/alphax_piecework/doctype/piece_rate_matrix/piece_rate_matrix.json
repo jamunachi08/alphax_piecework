@@ -1,0 +1,292 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "naming_series:",
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "title",
+  "company",
+  "operation",
+  "cb1",
+  "valid_from",
+  "valid_to",
+  "currency",
+  "uom",
+  "sb_key",
+  "item_code",
+  "item_group",
+  "cb2",
+  "workstation_type",
+  "difficulty_class",
+  "specificity_score",
+  "sb_rates",
+  "standard_rate",
+  "overtime_multiplier",
+  "sam_minutes",
+  "cb3",
+  "urgent_premium_percent",
+  "multi_skill_bonus_percent",
+  "sb_slabs",
+  "enable_slabs",
+  "slabs",
+  "sb_audit",
+  "change_reason",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "PRM-.YYYY.-",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PRM-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Title",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "operation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Operation",
+   "options": "Operation",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Valid From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valid_to",
+   "fieldtype": "Date",
+   "label": "Valid To"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "uom",
+   "fieldtype": "Link",
+   "label": "Per UOM",
+   "options": "UOM"
+  },
+  {
+   "description": "Leave blank to apply to all. The most specific submitted row wins: Item > Workstation Type > Difficulty > Item Group.",
+   "fieldname": "sb_key",
+   "fieldtype": "Section Break",
+   "label": "Applies To"
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Item",
+   "options": "Item"
+  },
+  {
+   "fieldname": "item_group",
+   "fieldtype": "Link",
+   "label": "Item Group",
+   "options": "Item Group"
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "workstation_type",
+   "fieldtype": "Link",
+   "label": "Workstation Type",
+   "options": "Workstation Type"
+  },
+  {
+   "fieldname": "difficulty_class",
+   "fieldtype": "Link",
+   "label": "Difficulty Class",
+   "options": "PieceWork Difficulty Class"
+  },
+  {
+   "fieldname": "specificity_score",
+   "fieldtype": "Int",
+   "label": "Specificity Score",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_rates",
+   "fieldtype": "Section Break",
+   "label": "Rates"
+  },
+  {
+   "fieldname": "standard_rate",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Standard Rate / Piece",
+   "options": "currency",
+   "reqd": 1
+  },
+  {
+   "default": "1.5",
+   "fieldname": "overtime_multiplier",
+   "fieldtype": "Float",
+   "label": "Overtime Multiplier"
+  },
+  {
+   "description": "Minutes per piece at 100 % efficiency. Drives capacity checks and performance KPIs.",
+   "fieldname": "sam_minutes",
+   "fieldtype": "Float",
+   "label": "Standard Allowed Minutes (SAM)"
+  },
+  {
+   "fieldname": "cb3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "urgent_premium_percent",
+   "fieldtype": "Percent",
+   "label": "Urgent Order Premium %"
+  },
+  {
+   "fieldname": "multi_skill_bonus_percent",
+   "fieldtype": "Percent",
+   "label": "Multi-Skill Bonus %"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "sb_slabs",
+   "fieldtype": "Section Break",
+   "label": "Progressive Output Slabs"
+  },
+  {
+   "description": "Incentive calculated on each worker's daily output in the Wage Batch (marginal, like tax brackets).",
+   "fieldname": "enable_slabs",
+   "fieldtype": "Check",
+   "label": "Enable Slabs"
+  },
+  {
+   "depends_on": "eval:doc.enable_slabs",
+   "fieldname": "slabs",
+   "fieldtype": "Table",
+   "label": "Slabs",
+   "options": "Piece Rate Matrix Slab"
+  },
+  {
+   "fieldname": "sb_audit",
+   "fieldtype": "Section Break",
+   "label": "Change Control"
+  },
+  {
+   "fieldname": "change_reason",
+   "fieldtype": "Small Text",
+   "label": "Reason for Change",
+   "mandatory_depends_on": "eval:doc.amended_from",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Piece Rate Matrix",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-09-11 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "Piece Rate Matrix",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Supervisor"
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork QC Inspector"
+  }
+ ],
+ "search_fields": "operation,item_code,workstation_type",
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "title",
+ "track_changes": 1
+}

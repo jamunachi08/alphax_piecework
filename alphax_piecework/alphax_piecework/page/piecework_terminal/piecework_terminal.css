@@ -1,0 +1,16 @@
+.apw-term { max-width: 1100px; margin: 0 auto; }
+.apw-term-status { display: flex; align-items: center; gap: 8px; font-size: 14px; margin-bottom: 12px; color: var(--text-muted); }
+.apw-dot { width: 12px; height: 12px; border-radius: 50%; background: #2fb67c; display: inline-block; }
+.apw-dot.apw-offline { background: #e5484d; }
+.apw-term-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.apw-term-form, .apw-term-pad { background: var(--card-bg); border: 1px solid var(--border-color); border-radius: 14px; padding: 18px; }
+.apw-term-form label { margin-top: 10px; font-weight: 600; }
+.apw-term-form select { height: 48px; font-size: 16px; }
+.apw-window { margin-top: 14px; font-size: 13px; color: var(--text-muted); }
+.apw-qty { font-size: 88px; font-weight: 700; text-align: center; font-variant-numeric: tabular-nums; }
+.apw-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 12px 0; }
+.apw-step, .apw-clear { height: 72px; font-size: 26px; font-weight: 700; }
+.apw-log { width: 100%; height: 80px; font-size: 26px; }
+.apw-recent { margin-top: 16px; font-size: 14px; }
+.apw-recent-row { padding: 6px 0; border-bottom: 1px dashed var(--border-color); }
+@media (max-width: 800px) { .apw-term-grid { grid-template-columns: 1fr; } }

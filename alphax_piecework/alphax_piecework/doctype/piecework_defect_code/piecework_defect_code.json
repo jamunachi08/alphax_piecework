@@ -1,0 +1,143 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:defect_code",
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "defect_code",
+  "defect_name",
+  "defect_name_ar",
+  "is_active",
+  "cb1",
+  "category",
+  "responsibility",
+  "default_disposition",
+  "severity"
+ ],
+ "fields": [
+  {
+   "fieldname": "defect_code",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Defect Code",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "defect_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Defect Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "defect_name_ar",
+   "fieldtype": "Data",
+   "label": "Defect Name (Arabic)"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Workmanship",
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Workmanship\nMachine\nMaterial\nDesign\nHandling"
+  },
+  {
+   "default": "Worker",
+   "description": "Workers are never charged for defects that are not their responsibility.",
+   "fieldname": "responsibility",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Responsibility",
+   "options": "Worker\nMachine\nMaterial Supplier\nEngineering"
+  },
+  {
+   "default": "Rework - Original Worker",
+   "fieldname": "default_disposition",
+   "fieldtype": "Select",
+   "label": "Default Disposition",
+   "options": "Scrap\nRework - Original Worker\nRework - Third Party"
+  },
+  {
+   "default": "Minor",
+   "fieldname": "severity",
+   "fieldtype": "Select",
+   "label": "Severity",
+   "options": "Minor\nMajor\nCritical"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-09-11 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "PieceWork Defect Code",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork QC Inspector",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Supervisor"
+  }
+ ],
+ "search_fields": "defect_name,category",
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "defect_name",
+ "track_changes": 1
+}

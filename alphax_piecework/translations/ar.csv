@@ -1,0 +1,110 @@
+AlphaX PieceWork,ألفا إكس للعمل بالقطعة
+Piece Rate Log,سجل العمل بالقطعة
+Piece Rate Matrix,مصفوفة أسعار القطعة
+Shop Floor QA Log,سجل فحص الجودة في الورشة
+PieceWork Wage Batch,دفعة أجور العمل بالقطعة
+Production Cell,خلية الإنتاج
+PieceWork Settings,إعدادات العمل بالقطعة
+PieceWork Defect Code,رمز العيب
+PieceWork Difficulty Class,فئة الصعوبة
+Employee Operation Skill,مهارة الموظف في العملية
+PieceWork Edge Device,جهاز الطرفية
+PieceWork Edge Event,حدث جهاز الطرفية
+PieceWork Audit Event,حدث تدقيق
+Shop Floor Leaderboard,لوحة صدارة الورشة
+PieceWork Terminal,طرفية المشغل
+Pieces Logged,القطع المسجلة
+Pieces Rejected (QC),القطع المرفوضة (الجودة)
+Pieces Accepted,القطع المقبولة
+Worker Type,نوع العامل
+Individual,فردي
+Hours Worked,ساعات العمل
+Overtime Hours,ساعات العمل الإضافي
+From Time,من وقت
+To Time,إلى وقت
+Capacity Ceiling,سقف الطاقة
+Capacity Status,حالة الطاقة
+Review Status,حالة المراجعة
+Pending Review,بانتظار المراجعة
+Approved,معتمد
+Rejected,مرفوض
+Not Required,غير مطلوب
+Within Capacity,ضمن الطاقة
+Exceeded,متجاوز
+Base Rate,السعر الأساسي
+Effective Rate,السعر الفعلي
+Gross Amount,المبلغ الإجمالي
+QC Deductions,خصومات الجودة
+Net Amount,صافي المبلغ
+Payroll Status,حالة الرواتب
+Unbatched,غير مجمّع
+Batched,مجمّع
+Posted,مرحّل
+Wage Batch,دفعة الأجور
+Amendment Reason,سبب التعديل
+Standard Rate / Piece,السعر القياسي للقطعة
+Overtime Multiplier,معامل العمل الإضافي
+Urgent Order Premium %,علاوة الطلب العاجل %
+Multi-Skill Bonus %,مكافأة تعدد المهارات %
+Standard Allowed Minutes (SAM),الدقائق القياسية المسموحة
+Valid From,ساري من
+Valid To,ساري حتى
+Progressive Output Slabs,شرائح الإنتاج التصاعدية
+Reason for Change,سبب التغيير
+Disposition,التصرف
+Scrap,إتلاف
+Rework - Original Worker,إعادة العمل - العامل الأصلي
+Rework - Third Party,إعادة العمل - طرف ثالث
+Qty Failed,الكمية المعيبة
+Defect Code,رمز العيب
+Responsibility,المسؤولية
+Root Cause,السبب الجذري
+Rework Specialist,أخصائي إعادة العمل
+Original Worker Deduction,خصم العامل الأصلي
+Material Recovery,استرداد تكلفة المواد
+Rework Payout,أجر إعادة العمل
+Total Worker Deduction,إجمالي خصم العامل
+Fetch Entries,جلب القيود
+Employees,الموظفون
+Gross Earnings,إجمالي الأرباح
+Slab Incentive,حافز الشرائح
+Rework Earnings,أرباح إعادة العمل
+Statutory Cap Waiver,إعفاء السقف النظامي
+Minimum Guarantee Top-up,تكملة الحد الأدنى المضمون
+Net Payable,صافي المستحق
+Journal Entry Accrual,استحقاق بقيد يومية
+Additional Salary (HRMS),راتب إضافي (الموارد البشرية)
+Retry Posting,إعادة محاولة الترحيل
+Approve Override,اعتماد التجاوز
+Reject Log,رفض السجل
+Record QC Failure,تسجيل عيب جودة
+Preview Rate,معاينة السعر
+Capacity Review,مراجعة الطاقة
+Log Pieces,تسجيل القطع
+Sync Now,مزامنة الآن
+Device Setup,إعداد الجهاز
+Online,متصل
+Offline,غير متصل
+Pending,معلق
+Verify Hash Chain,التحقق من سلسلة التجزئة
+Retry Failed,إعادة المحاولة للفاشلة
+Process Queue Now,معالجة الطابور الآن
+Labor Effectiveness,فعالية العمالة
+Defect Pareto,تحليل باريتو للعيوب
+Capacity Exceptions,استثناءات الطاقة
+Piece Rate Earnings Register,سجل أرباح العمل بالقطعة
+Availability %,التوافر %
+Performance %,الأداء %
+Quality %,الجودة %
+OLE %,فعالية العمالة الشاملة %
+Full Screen,ملء الشاشة
+Earnings Split Method,طريقة توزيع الأرباح
+Members,الأعضاء
+Skill Weight,وزن المهارة
+Capacity Exceeded,تجاوز الطاقة
+Material Balance,توازن المواد
+Flow Balance,توازن التدفق
+Overlapping Time Window,تداخل الفترة الزمنية
+Rate Not Found,لم يتم العثور على سعر
+A reason is mandatory.,السبب إلزامي.
+You cannot review a log you created (segregation of duties).,لا يمكنك مراجعة سجل أنشأته بنفسك (فصل المهام).

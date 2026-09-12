@@ -1,0 +1,399 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "sb_general",
+  "standard_shift_hours",
+  "require_time_window",
+  "cb_g",
+  "block_overlapping_logs",
+  "enable_job_card_bridge",
+  "sb_capacity",
+  "enable_capacity_check",
+  "capacity_basis",
+  "cb_c",
+  "max_efficiency_percent",
+  "capacity_action",
+  "sb_material",
+  "enable_material_balance",
+  "check_material_transferred",
+  "cb_m",
+  "enable_flow_balance",
+  "over_production_allowance_percent",
+  "sb_workforce",
+  "require_operation_skill",
+  "multi_skill_min_operations",
+  "cb_w",
+  "enforce_attendance",
+  "sb_quality",
+  "default_scrap_payout_percent",
+  "default_rework_original_payout_percent",
+  "material_cost_recovery_percent",
+  "cb_q",
+  "default_third_party_deduction_percent",
+  "default_third_party_payout_percent",
+  "sb_payroll",
+  "posting_mode",
+  "enqueue_threshold",
+  "company_accounts",
+  "sb_caps",
+  "enable_deduction_caps",
+  "damage_deduction_cap_days",
+  "total_deduction_cap_percent",
+  "fixed_daily_wage",
+  "cb_caps",
+  "enable_minimum_guarantee",
+  "minimum_daily_earning",
+  "sb_edge",
+  "auto_submit_edge_logs",
+  "edge_event_retention_days",
+  "cb_e",
+  "max_events_per_request",
+  "max_clock_skew_minutes",
+  "sb_board",
+  "leaderboard_refresh_seconds",
+  "cb_b",
+  "leaderboard_show_names"
+ ],
+ "fields": [
+  {
+   "fieldname": "sb_general",
+   "fieldtype": "Section Break",
+   "label": "General"
+  },
+  {
+   "default": "8",
+   "fieldname": "standard_shift_hours",
+   "fieldtype": "Float",
+   "label": "Standard Shift Hours"
+  },
+  {
+   "default": "1",
+   "description": "Closes the 'default 8 hours' loophole: hours are always derived from real timestamps.",
+   "fieldname": "require_time_window",
+   "fieldtype": "Check",
+   "label": "Require From/To Time on Logs"
+  },
+  {
+   "fieldname": "cb_g",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "block_overlapping_logs",
+   "fieldtype": "Check",
+   "label": "Block Overlapping Time Windows per Worker"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_job_card_bridge",
+   "fieldtype": "Check",
+   "label": "Auto-create Logs from Job Card Time Logs"
+  },
+  {
+   "fieldname": "sb_capacity",
+   "fieldtype": "Section Break",
+   "label": "Capacity Throttling"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_capacity_check",
+   "fieldtype": "Check",
+   "label": "Enable Capacity Check"
+  },
+  {
+   "default": "Stricter of Both",
+   "fieldname": "capacity_basis",
+   "fieldtype": "Select",
+   "label": "Capacity Basis",
+   "options": "Workstation Rated Speed\nStandard Allowed Minutes (SAM)\nStricter of Both"
+  },
+  {
+   "fieldname": "cb_c",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "130",
+   "fieldname": "max_efficiency_percent",
+   "fieldtype": "Percent",
+   "label": "Max Plausible Efficiency % (SAM)"
+  },
+  {
+   "default": "Hold for Review",
+   "fieldname": "capacity_action",
+   "fieldtype": "Select",
+   "label": "When Exceeded",
+   "options": "Hold for Review\nBlock\nWarn Only"
+  },
+  {
+   "fieldname": "sb_material",
+   "fieldtype": "Section Break",
+   "label": "Material & Flow Balancing"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_material_balance",
+   "fieldtype": "Check",
+   "label": "Cap Pieces per Operation at Work Order Qty"
+  },
+  {
+   "default": "1",
+   "fieldname": "check_material_transferred",
+   "fieldtype": "Check",
+   "label": "Cap at Material Transferred for Manufacturing"
+  },
+  {
+   "fieldname": "cb_m",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_flow_balance",
+   "fieldtype": "Check",
+   "label": "Operation Cannot Exceed Previous Operation Output"
+  },
+  {
+   "description": "Blank = use Manufacturing Settings.",
+   "fieldname": "over_production_allowance_percent",
+   "fieldtype": "Percent",
+   "label": "Over-production Allowance %"
+  },
+  {
+   "fieldname": "sb_workforce",
+   "fieldtype": "Section Break",
+   "label": "Workforce"
+  },
+  {
+   "default": "0",
+   "fieldname": "require_operation_skill",
+   "fieldtype": "Check",
+   "label": "Require Valid Operation Skill"
+  },
+  {
+   "default": "3",
+   "fieldname": "multi_skill_min_operations",
+   "fieldtype": "Int",
+   "label": "Operations Needed for Multi-Skill Bonus"
+  },
+  {
+   "fieldname": "cb_w",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enforce_attendance",
+   "fieldtype": "Check",
+   "label": "Require Attendance / Check-in (HRMS)"
+  },
+  {
+   "fieldname": "sb_quality",
+   "fieldtype": "Section Break",
+   "label": "Quality Defaults"
+  },
+  {
+   "default": "0",
+   "fieldname": "default_scrap_payout_percent",
+   "fieldtype": "Percent",
+   "label": "Scrap: Worker Keeps %"
+  },
+  {
+   "default": "0",
+   "fieldname": "default_rework_original_payout_percent",
+   "fieldtype": "Percent",
+   "label": "Rework (Original): Payout %"
+  },
+  {
+   "default": "0",
+   "fieldname": "material_cost_recovery_percent",
+   "fieldtype": "Percent",
+   "label": "Scrap: Material Recovery %"
+  },
+  {
+   "fieldname": "cb_q",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "100",
+   "fieldname": "default_third_party_deduction_percent",
+   "fieldtype": "Percent",
+   "label": "Rework (3rd Party): Deduct From Original %"
+  },
+  {
+   "default": "100",
+   "fieldname": "default_third_party_payout_percent",
+   "fieldtype": "Percent",
+   "label": "Rework (3rd Party): Specialist Payout %"
+  },
+  {
+   "fieldname": "sb_payroll",
+   "fieldtype": "Section Break",
+   "label": "Payroll Posting"
+  },
+  {
+   "default": "Journal Entry Accrual",
+   "fieldname": "posting_mode",
+   "fieldtype": "Select",
+   "label": "Posting Mode",
+   "options": "Journal Entry Accrual\nAdditional Salary (HRMS)\nNone (Report Only)"
+  },
+  {
+   "default": "50",
+   "fieldname": "enqueue_threshold",
+   "fieldtype": "Int",
+   "label": "Post in Background Above N Employees"
+  },
+  {
+   "fieldname": "company_accounts",
+   "fieldtype": "Table",
+   "label": "Company Accounts",
+   "options": "PieceWork Company Account"
+  },
+  {
+   "fieldname": "sb_caps",
+   "fieldtype": "Section Break",
+   "label": "Minimum Earnings & Statutory Deduction Caps"
+  },
+  {
+   "default": "1",
+   "fieldname": "enable_deduction_caps",
+   "fieldtype": "Check",
+   "label": "Enforce Deduction Caps"
+  },
+  {
+   "default": "5",
+   "fieldname": "damage_deduction_cap_days",
+   "fieldtype": "Float",
+   "label": "Damage Deductions Cap (days of wage)"
+  },
+  {
+   "default": "50",
+   "fieldname": "total_deduction_cap_percent",
+   "fieldtype": "Percent",
+   "label": "Total Deductions Cap (% of earnings)"
+  },
+  {
+   "description": "Blank = average daily piece earnings in the batch period.",
+   "fieldname": "fixed_daily_wage",
+   "fieldtype": "Currency",
+   "label": "Fixed Daily Wage Basis"
+  },
+  {
+   "fieldname": "cb_caps",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_minimum_guarantee",
+   "fieldtype": "Check",
+   "label": "Enable Minimum Daily Earnings Guarantee"
+  },
+  {
+   "depends_on": "eval:doc.enable_minimum_guarantee",
+   "fieldname": "minimum_daily_earning",
+   "fieldtype": "Currency",
+   "label": "Minimum Daily Earning"
+  },
+  {
+   "fieldname": "sb_edge",
+   "fieldtype": "Section Break",
+   "label": "Edge Devices"
+  },
+  {
+   "default": "1",
+   "fieldname": "auto_submit_edge_logs",
+   "fieldtype": "Check",
+   "label": "Auto-submit Previous Day Edge Logs"
+  },
+  {
+   "default": "30",
+   "fieldname": "edge_event_retention_days",
+   "fieldtype": "Int",
+   "label": "Keep Processed Events (days)"
+  },
+  {
+   "fieldname": "cb_e",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "500",
+   "fieldname": "max_events_per_request",
+   "fieldtype": "Int",
+   "label": "Max Events per Request"
+  },
+  {
+   "default": "15",
+   "fieldname": "max_clock_skew_minutes",
+   "fieldtype": "Int",
+   "label": "Max Device Clock Skew (minutes)"
+  },
+  {
+   "fieldname": "sb_board",
+   "fieldtype": "Section Break",
+   "label": "Shop-Floor Leaderboard"
+  },
+  {
+   "default": "30",
+   "fieldname": "leaderboard_refresh_seconds",
+   "fieldtype": "Int",
+   "label": "Refresh Interval (seconds)"
+  },
+  {
+   "fieldname": "cb_b",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "1",
+   "fieldname": "leaderboard_show_names",
+   "fieldtype": "Check",
+   "label": "Show Employee Names (else masked IDs)"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-09-11 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "PieceWork Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "PieceWork Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Supervisor"
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork QC Inspector"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:device_id",
+ "creation": "2026-09-11 09:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "device_id",
+  "device_name",
+  "device_type",
+  "company",
+  "is_active",
+  "cb1",
+  "api_user",
+  "workstation",
+  "default_operation",
+  "sb_health",
+  "last_seen",
+  "last_ip",
+  "cb2",
+  "total_events",
+  "last_batch_size",
+  "sb_notes",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "device_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device ID",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "device_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Device Name"
+  },
+  {
+   "default": "Tablet",
+   "fieldname": "device_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Device Type",
+   "options": "Tablet\nBarcode Scanner\nRFID Gate\nPLC / IoT Counter\nKiosk"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "cb1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "description": "Requests must be authenticated as this user (token auth). Give it the PieceWork Device role only.",
+   "fieldname": "api_user",
+   "fieldtype": "Link",
+   "label": "API User",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "workstation",
+   "fieldtype": "Link",
+   "label": "Default Workstation",
+   "options": "Workstation"
+  },
+  {
+   "fieldname": "default_operation",
+   "fieldtype": "Link",
+   "label": "Default Operation",
+   "options": "Operation"
+  },
+  {
+   "fieldname": "sb_health",
+   "fieldtype": "Section Break",
+   "label": "Health"
+  },
+  {
+   "fieldname": "last_seen",
+   "fieldtype": "Datetime",
+   "label": "Last Seen",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_ip",
+   "fieldtype": "Data",
+   "label": "Last IP",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "cb2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_events",
+   "fieldtype": "Int",
+   "label": "Total Events Received",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_batch_size",
+   "fieldtype": "Int",
+   "label": "Last Batch Size",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "sb_notes",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-09-11 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "AlphaX PieceWork",
+ "name": "PieceWork Edge Device",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "PieceWork Supervisor"
+  }
+ ],
+ "show_title_field_in_link": 0,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "device_name",
+ "track_changes": 1
+}

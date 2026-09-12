@@ -1,0 +1,24 @@
+.apw-board { background: #0b1f2c; color: #e8f1f5; border-radius: 16px; padding: 24px; min-height: 80vh; font-variant-numeric: tabular-nums; }
+.apw-board:fullscreen { border-radius: 0; padding: 40px; overflow: auto; }
+.apw-kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 20px; }
+.apw-kpi { background: #12324a; border-radius: 14px; padding: 18px 22px; border-inline-start: 6px solid #4a6b80; }
+.apw-kpi-label { font-size: 15px; opacity: .75; text-transform: uppercase; letter-spacing: .05em; }
+.apw-kpi-value { font-size: 52px; font-weight: 700; line-height: 1.1; }
+.apw-kpi-value small { font-size: 22px; opacity: .7; margin-inline-start: 4px; }
+.apw-kpi.apw-good { border-color: #4fc3a1; } .apw-kpi.apw-warn { border-color: #f2b233; } .apw-kpi.apw-bad { border-color: #e5484d; }
+.apw-grid { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+.apw-side { display: grid; gap: 16px; align-content: start; }
+.apw-panel { background: #12324a; border-radius: 14px; padding: 18px; }
+.apw-panel h3 { color: #f2b233; font-size: 18px; margin: 0 0 12px; }
+.apw-table { width: 100%; border-collapse: collapse; font-size: 22px; }
+.apw-table th { font-size: 13px; opacity: .6; text-align: start; padding: 6px 8px; font-weight: 500; }
+.apw-table td { padding: 10px 8px; border-top: 1px solid rgba(255,255,255,.06); }
+.apw-num { text-align: end; } .apw-rank { width: 48px; font-weight: 700; opacity: .8; }
+td.apw-good { color: #4fc3a1; } td.apw-warn { color: #f2b233; } td.apw-bad { color: #ff7b7f; }
+.apw-rank-1 td { background: rgba(242,178,51,.14); } .apw-rank-2 td { background: rgba(200,210,220,.08); } .apw-rank-3 td { background: rgba(205,127,50,.10); }
+.apw-svg { width: 100%; height: auto; } .apw-bar { fill: #4fc3a1; }
+.apw-axis { fill: #9fb6c4; font-size: 11px; text-anchor: middle; } .apw-bar-label { fill: #e8f1f5; font-size: 11px; text-anchor: middle; }
+.apw-cell { display: flex; justify-content: space-between; padding: 8px 0; font-size: 20px; border-top: 1px solid rgba(255,255,255,.06); }
+.apw-empty { padding: 40px; text-align: center; opacity: .6; font-size: 20px; }
+.apw-footer { margin-top: 14px; opacity: .5; font-size: 13px; text-align: end; }
+@media (max-width: 900px) { .apw-kpis { grid-template-columns: repeat(2, 1fr); } .apw-grid { grid-template-columns: 1fr; } }
